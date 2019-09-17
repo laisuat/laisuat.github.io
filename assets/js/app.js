@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	//     $locationProvider.html5Mode(true);
 	// }
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
  
     $stateProvider
@@ -20,6 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         })
  });
 
-app.controller('myCtrl', function($scope) {
-
+app.controller('myCtrl', function($scope, $state, $location) {
+    console.log(window.location.pathname );
+    console.log(window.location.search);
 });
