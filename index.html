@@ -11,19 +11,10 @@
     <link rel='stylesheet' type='text/css' href="https://laisuat.github.io/assets/css/style.css">
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-	<!-- <nav class="navbar navbar-inverse" role="navigation">
-	    <div class="navbar-header">
-	        <a class="navbar-brand" ui-sref="#">Test</a>
-	    </div>
-	    <ul class="nav navbar-nav">
-	        <li><a ui-sref="home">Home</a></li>
-	        <li><a ui-sref="about">About</a></li>
-	    </ul>
-	</nav> -->
 
 	<nav class="navbar navbar-expand-sm bg-info navbar-dark">
 	  <!-- Brand/logo -->
-	  <a class="navbar-brand" href="#">Logo</a>
+	  <a class="navbar-brand" ui-sref="home">Logo</a>
 	  
 	  <!-- Links -->
 	  <ul class="navbar-nav">
@@ -34,18 +25,18 @@
 	      <a class="nav-link" ui-sref="about">About</a></li>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Link 3</a>
+	      <a class="nav-link" ui-sref="home">Link 3</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link disabled" href="#">Disabled</a>
+	      <a class="nav-link disabled" ui-sref="home">Disabled</a>
 	    </li>
 	  </ul>
 	</nav>
 
 
-<!-- 	<div class="container">
+	<div class="container">
 	    <div ui-view></div>
-	</div> -->
+	</div>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
