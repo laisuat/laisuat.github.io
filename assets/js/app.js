@@ -17,5 +17,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
  });
 
 app.controller('myCtrl', function($scope, $state, $location) {
-    
+    angular.element($('#myElement')).datepicker({
+        uiLibrary: 'bootstrap4'
+    });
 });
