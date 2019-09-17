@@ -2,10 +2,11 @@ var app = angular.module('myApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	if(window.history && window.history.pushState){
-	    $locationProvider.html5Mode(true);
-	}
+	// if(window.history && window.history.pushState){
+	//     $locationProvider.html5Mode(true);
+	// }
 
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
  
     $stateProvider
