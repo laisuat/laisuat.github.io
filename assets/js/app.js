@@ -1,22 +1,18 @@
 var app = angular.module('myApp', ['ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/home');
-    
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+ 
     $stateProvider
-        
         .state('home', {
-            url: '/',
-            templateUrl: 'home.html'
+            url:'/',
+            templateUrl: 'templates/home.html'
         })
-        
         .state('about', {
-            url: '/about',
-            templateUrl: 'about.html'
-        });
-        
-});
+            url:'/about',
+            templateUrl: 'templates/about.html'
+        })
+ }]);
 
 app.controller('myCtrl', function($scope) {
     $scope.message = 'test';
