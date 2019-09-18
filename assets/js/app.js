@@ -1,23 +1,43 @@
-var app = angular.module('myApp', ['ui.router']);
+(function () {
+    'use strict';
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    var app = angular.module('myApp', ['ui.router']);
 
-    $locationProvider.hashPrefix('');
-    $urlRouterProvider.otherwise('/');
- 
-    $stateProvider
-        .state('home', {
-            url:'/',
-            templateUrl: 'home.html'
-        })
-        .state('about', {
-            url:'/about',
-            templateUrl: 'about.html'
-        })
- });
+    app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-app.controller('myCtrl', function($scope, $state, $location) {
-    angular.element($('#myElement')).datepicker({
-        uiLibrary: 'bootstrap4'
+        $locationProvider.hashPrefix('');
+        $urlRouterProvider.otherwise('/');
+     
+        $stateProvider
+            .state('home', {
+                url:'/',
+                controller: 'homeCtrl',
+                templateUrl: 'home.html'
+            })
+            .state('about', {
+                url:'/about',
+                controller: 'aboutCtrl',
+                templateUrl: 'about.html'
+            })
+     });
+
+    app.controller('myCtrl', function($scope, $state, $location) {
+    });   
+
+    app.controller('aboutCtrl', function($scope) {
+       $scope.users = [
+            {}
+        ];
+       
+       $scope.addUser = function() {
+           var newUser = {};
+           $scope.users.push(newUser);
+       }
+       
+       $scope.removeUser = function(user) {
+           var index = $scope.users.indexOf(user);
+           $scope.users.splice(index, 1);
+       }
+
     });
-});
+})();

@@ -1,30 +1,13 @@
 <div class="container">
   <h2>About</h2>
-  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Add User Button --> 
+  <button ng-click="addUser()" class="add-user">Add User</button> 
+  <!-- List Multiple Inputs -->
+  <section ng-repeat="user in users">
+    <span class="serial-number">{{ $index + 1 }}.</span>
+    <input ng-model="user.firstName" class="users-container-inputs-text" type="text" placeholder="First Name" />
+    <input ng-model="user.lastName" class="users-container-inputs-text" type="text" placeholder="Last Name" />
+    <input ng-model="user.address" class="users-container-inputs-text" type="text" placeholder="Address" />
+    <a class="users-container-inputs-button" ng-click="removeUser(user)">X</a>
+  </section>
 </div>
